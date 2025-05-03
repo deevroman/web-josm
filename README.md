@@ -7,14 +7,14 @@ Powered by https://cheerpj.com
 ## Authorization
 
 You must manually enter the OAuth2 token in the JOSM settings.
-1. `Edit`->`Preferences`->`Expert Mode`
-2. `OSM Server`->`Authorize now (Manual)`
+1. `Edit`→`Preferences`→`Expert Mode`
+2. `OSM Server`→`Authorize now (Manual)`
 
 The easiest way to get it is to open [osm.org/id](https://osm.org/id) and run in the browser console: `document.querySelector("#id-container").getAttribute("data-token")`
 
 ## Usage
 
-Offline mode is enabled by default for josm.openstreetmap.de Due to the limitations of CORS, access to it is limited, so you must first install and enable [this extension](https://webextension.org/listing/access-control.html). Only then can you disable offline mode. (`File`->`Offline Mode`->`JOSM Website`)
+Offline mode is enabled by default for josm.openstreetmap.de. Due to the limitations of CORS, access to it is limited, so you must first install and enable [this extension](https://webextension.org/listing/access-control.html). Only then can you disable offline mode. (`File`→`Offline Mode`→`JOSM Website`). Don't forget to turn off the extension after exiting JOSM.
 
 ## What for?
 
