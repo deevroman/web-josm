@@ -28,3 +28,13 @@ Just for fun. Now you can replace the iD editor on the osm website with JOSM wit
 Cheerpj allows you to run applications that require Java 8 or Java 11. However, I was unable to patch JOSM to make JOSM work with Java 11 due to some internal errors.
 
 So I took the latest JOSM that runs on Java 8 ([#18984](https://josm.openstreetmap.de/log/josm?action=stop_on_copy&mode=stop_on_copy&rev=&stop_rev=18984&limit=700&verbose=on)) and [cherry-picked](https://github.com/deevroman/josm/commits/master/) the commits that are needed to support manual authorization via OAuth 2. And I [built](https://github.com/deevroman/josm/releases/tag/19367) a jar using GitHub Actions, which is located in this repository.
+
+## Known issues
+
+- It is unlikely that all plugins will work
+- You need to install an extension to bypass CORS (browsers block josm.openstreetmap.de)
+- ESRI tiles are unstable for some reason
+- Remote control is not working
+- It follows that authorization works only by token
+- Sudden random error messages
+- Some pop-up windows don't show the first time
