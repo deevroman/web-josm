@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CheerpJ test</title>
+    <script src="https://cjrtnc.leaningtech.com/4.2/loader.js"></script>
+</head>
+<body>
+<script>
+  console.warn(window.innerWidth, window.innerHeight);
+  (async function () {
+    function execCb(cmdPath, argsArray) {
+      if (cmdPath === "xdg-open") {
+        window.open(argsArray, "_blank");
+      }
+    }
+    await cheerpjInit({version: 11, execCallback: execCb, clipboardMode: "system"}, document.body);
+    const lib = await cheerpjRunLibrary("");
+    const Files = await lib.java.nio.file.Files;
+    const Paths = await lib.java.nio.file.Paths;
+
+    const cacheDir = await Paths.get("/files/.cache/JOSM");
+    await Files.createDirectories(cacheDir);
+
+    console.warn(window.innerWidth, window.innerHeight);
+    cheerpjCreateDisplay(window.innerWidth - 16, window.innerHeight - 16);
+    await cheerpjRunJar("/app/web-josm/JOSM-Linux-java11-19547.jar", "--offline=JOSM_WEBSITE")
+  })();
+</script>
+</body>
+</html>
